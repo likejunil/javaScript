@@ -34,15 +34,41 @@
     따라서 defer 속성을 사용해야 한다..
     -->
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+
     <!--    <script src="main.js"></script>-->
     <!--    <script async src="main.js"></script>-->
     <!--    <script defer src="variable.js"></script>-->
     <!--    <script defer src="operator.js"></script>-->
     <!--    <script defer src="function.js"></script>-->
     <script defer src="class.js"></script>
+    <link rel="stylesheet" href="main.css">
+
 </head>
 
 <body>
+
+<div id="alert-box">
+    <p>아이디를 입력하여 주십시오
+        <button id="close-button">X</button>
+    </p>
+</div>
+<button onclick="controlBox('none')">사라져 버튼</button>
+<button onclick="controlBox('block')">나타나 버튼</button>
+
+<script>
+    const controlBox = function (display) {
+        document.getElementById("alert-box").style.display = display;
+    }
+
+    document.getElementById('close-button')
+        .addEventListener('click', () => controlBox('none'));
+
+    $('#close-button').html('바꿔주세요');
+
+</script>
 
 </body>
 
