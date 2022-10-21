@@ -1,20 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Playground</title>
-    <meta name="논다." content="자바스크립트 코드를 실행해 본다.">
+    <head>
+        <meta charset="UTF-8">
+        <title>Playground</title>
+        <meta name="논다." content="자바스크립트 코드를 실행해 본다.">
 
-    <script src="https://code.jquery.com/jquery-3.6.1.js"
-            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-            crossorigin="anonymous"></script>
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.6.1.js"
+                integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+                crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="./playground.css">
-    <script src="./playground.js" defer></script>
+        <!-- w2ui -->
+        <script type="text/javascript" src="http://w2ui.com/src/w2ui-1.5.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.5.min.css">
 
-</head>
-<body>
-    <h1 class="result"></h1>
+        <link rel="stylesheet" href="./playground.css">
+        <script src="./playground.js" defer></script>
 
-</body>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 class="result"></h1>
+            <input type="text" id="to-upper">
+        </div>
+
+        <div class="tabs">
+            <div class="control">
+                <button class="btn add-tab">add</button>
+                <button class="btn change-tab">change</button>
+            </div>
+
+            <div class="contents">
+                <div id="myTabs"></div>
+                <div id="myTabsContent">
+                    tab1
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        $(function () {
+            $('#myTabs').w2tabs({
+                name: 'tabs',
+                active: 'tab4',
+                tabs: [
+                    {id: 'tab1', text: 'Tab 1'},
+                    {id: 'tab2', text: 'Tab 2'},
+                    {id: 'tab3', text: 'Tab 3'},
+                    {id: 'tab4', text: 'Tab 4'},
+                ],
+                onClick(event) {
+                    console.log(event);
+                    $('#myTabsContent').html(event.target);
+                }
+            });
+
+            $('.add-tab').on('click', event => {
+                console.log(w2ui.tabs);
+                w2ui.tabs.tabs.push({id: 'tab5', text: 'Tab 5'});
+                w2ui.tabs.refresh();
+            });
+
+            $('.change-tab').on('click', event => {
+                console.log(w2ui);
+                w2ui.tabs.active = 'tab1';
+                w2ui.tabs.refresh();
+            });
+        });
+
+    </script>
 </html>

@@ -15,7 +15,7 @@ $(document).ready(() => {
       color: 'black',
     })
     .attr({
-      clss: 'organism',
+      class: 'organism',
       id: 'animal',
       planet: 'earth',
     })

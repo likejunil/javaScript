@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     columnDefs: columnDefs,
     animate: true,
   };
-  agGrid.Grid(gridDiv, gridOptions);
+  new agGrid.Grid(gridDiv, gridOptions);
   getData(gridOptions);
 });
 
