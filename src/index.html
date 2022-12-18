@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>playground</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>playground</title>
 
-    <script src="./playground.js"></script>
-</head>
-<body>
+        <script src="./playground.js"></script>
+    </head>
+    <body>
 
-</body>
+
+        <input type="checkbox" id="apple" name="yes" value="ok">
+        <label for="apple">OK</label>
+
+        <a href="#" class="btn-ix search" onclick="${menuId}_FUN.multiSearch([
+                {sect: 0, tab: 0, params: null, extTask: ${menuId}_FUN.extTask},
+                {sect: 1, tab: 0, params: null, extTask: ${menuId}_FUN.extTask},
+            ]);">Search
+        </a>
+
+    </body>
 </html>
+
+<script>
+    [
+        {headerCheckboxSelection: true, hide: true, checkboxSelection: true, pinned: 'left', maxWidth: 50, filter: false, sortable: false },
+        {headerName: ' ', field: "__total__", filter: 'agTextColumnFilter', width: 100},
+        {headerName: 'GROUP', field: "grp", filter: 'agTextColumnFilter', width: 100},
+        {headerName: 'Size', field: "msize", filter: 'agTextColumnFilter', width: 100},
+        {headerName: 'Type', field: "mtype", filter: 'agTextColumnFilter', width: 100},
+        {headerName: 'BR', field: "br", filter: 'agTextColumnFilter', width: 100},
+        {headerName: 'Material', field: "mtcode", filter: 'agTextColumnFilter', width: 100},
+        {headerName: 'Qty', field: "qty", filter: 'agTextColumnFilter', width: 100},
+        {headerName: '단가(원)', field: "price_w", filter: 'agTextColumnFilter', width: 100},
+        {headerName: 'S/P단가(원)', field: "spprice_w", filter: 'agTextColumnFilter', width: 100},
+        {headerName: 'SP', field: "sp", filter: 'agTextColumnFilter', width: 100},
+        {headerName: '금액(원)', field: "allpric_w", filter: 'agTextColumnFilter', width: 100},
+        {headerName: '생산예정일', field: "prdcplan", filter: 'agTextColumnFilter', width: 100},
+        {headerName: '확인일자', field: "confdate", filter: 'agTextColumnFilter', width: 100},
+        {headerName: '삽입 | 갱신', hide: true, field: "crud", filter: 'agTextColumnFilter', width: 100},
+    ];
+
+
+</script>
